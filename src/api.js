@@ -30,7 +30,7 @@ const currentDate = `${currentYear}-${currentMonth}-${currentDay}`
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`
 
 // BASE URL
-const KEY_URL = 'key=cc6001407d8c4f32b82fe15f7c940720'
+const KEY_URL = `key=${process.env.REACT_APP_GAMES_API}`
 const BASE_URL = 'https://api.rawg.io/api/'
 
 const POPULAR_GAMES = `games?${KEY_URL}&date=${lastYear},${currentDate}&ordering=-rating&page_size=10`
