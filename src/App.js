@@ -1,11 +1,11 @@
 import Home from "./pages/Home"
 
-import { useEffect } from "react"
-
+import GlobalStyles from "./components/GlobalStyles"
 
 const App = () => {
   return (
     <div className="App">
+      <GlobalStyles />
       <Home />
     </div>
   )
