@@ -9,6 +9,7 @@ import starFull from '../img/star-full.png'
 
 import styled from "styled-components"
 import { motion } from "framer-motion"
+import { smallerImage } from '../utils'
 
 import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
@@ -94,7 +95,7 @@ const GameDetail = ({ pathId }) => {
                         <Media>
                             <motion.img 
                                 layoutId={`image ${pathId}`} 
-                                src={game.background_image} 
+                                src={smallerImage(game.background_image, 640)} 
                                 alt={game.background_image} 
                             />
                         </Media>
@@ -104,7 +105,7 @@ const GameDetail = ({ pathId }) => {
                         <div className="gallery">
                             {screen.results && screen.results.map(screen => (
                                 <img 
-                                    src={screen.image} 
+                                    src={smallerImage(screen.image, 640)} 
                                     key={screen.id} 
                                     alt={screen.image} 
                                 />
