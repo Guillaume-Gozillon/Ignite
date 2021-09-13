@@ -1,21 +1,21 @@
 const getCurrentMonth = () => {
-    const month = new Date().getMonth() + 1
-    
-    if (month < 10) {
-        return `0${month}`
-    } else {
-        return month
-    }
+  const month = new Date().getMonth() + 1
+
+  if (month < 10) {
+    return `0${month}`
+  } else {
+    return month
+  }
 }
 
 const getCurrentDay = () => {
-    const day = new Date().getDate()
-    
-    if (day < 10) {
-        return `0${day}`
-    } else {
-        return day
-    }
+  const day = new Date().getDate()
+
+  if (day < 10) {
+    return `0${day}`
+  } else {
+    return day
+  }
 }
 
 getCurrentMonth()
@@ -34,26 +34,23 @@ const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`
 const KEY_URL = `key=${process.env.REACT_APP_GAMES_API}`
 const BASE_URL = 'https://api.rawg.io/api/'
 
-const POPULAR_GAMES = 
-`games?${KEY_URL}&date=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+const POPULAR_GAMES = `games?${KEY_URL}&date=${lastYear},${currentDate}&ordering=-rating&page_size=10`
 
-const UPCOMING_GAMES = 
-`games?${KEY_URL}&date=${currentDate},${nextYear}&ordering=-added&page_size=10`
+const UPCOMING_GAMES = `games?${KEY_URL}&date=${currentDate},${nextYear}&ordering=-added&page_size=10`
 
-const NEW_GAMES = 
-`games?${KEY_URL}&date=${lastYear},${currentDate}&ordering=-released&page_size=10`
+const NEW_GAMES = `games?${KEY_URL}&date=${lastYear},${currentDate}&ordering=-released&page_size=10`
 
 export const popularGamesURL = () => `${BASE_URL}${POPULAR_GAMES}`
 export const upcomingGamesURL = () => `${BASE_URL}${UPCOMING_GAMES}`
 export const newGamesURL = () => `${BASE_URL}${NEW_GAMES}`
 
 // Games Details
-export const GAMES_DETAIL_URL = game_id => 
-`${BASE_URL}games/${game_id}.json?&${KEY_URL}`
+export const GAMES_DETAIL_URL = game_id =>
+  `${BASE_URL}games/${game_id}.json?&${KEY_URL}`
 
 // Screenshot Details
-export const SCREEN_DETAIL_URL = game_id => 
-`${BASE_URL}games/${game_id}/screenshots?&.json?&${KEY_URL}`
+export const SCREEN_DETAIL_URL = game_id =>
+  `${BASE_URL}games/${game_id}/screenshots?&.json?&${KEY_URL}`
 
-export const SEARCH_GAMES = game_name => 
-`${BASE_URL}games?${KEY_URL}&search=${game_name}&page_size=9`
+export const SEARCH_GAMES = game_name =>
+  `${BASE_URL}games?${KEY_URL}&search=${game_name}&page_size=9`
